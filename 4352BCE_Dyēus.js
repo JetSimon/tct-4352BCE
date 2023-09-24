@@ -1,6 +1,6 @@
 
 // Generated mapping code
-(function (e, t, n, r, i) { function s(e, t, n, r) { r = r instanceof Array ? r : []; var i = {}; for (var s = 0; s < r.length; s++) { i[r[s]] = true } var o = function (e) { this.element = e }; o.prototype = n; e.fn[t] = function () { var n = arguments; var r = this; this.each(function () { var s = e(this); var u = s.data("plugin-" + t); if (!u) { u = new o(s); s.data("plugin-" + t, u); if (u._init) { u._init.apply(u, n) } } else if (typeof n[0] == "string" && n[0].charAt(0) != "_" && typeof u[n[0]] == "function") { var a = Array.prototype.slice.call(n, 1); var f = u[n[0]].apply(u, a); if (n[0] in i) { r = f } } }); return r } } var o = 370, u = 215, a = 10; var f = { stateStyles: { fill: "#333", stroke: "#666", "stroke-width": 1, "stroke-linejoin": "round", scale: [1, 1] }, stateHoverStyles: { fill: "#33c", stroke: "#000", scale: [1.1, 1.1] }, stateHoverAnimation: 500, stateSpecificStyles: {}, stateSpecificHoverStyles: {}, click: null, mouseover: null, mouseout: null, clickState: {}, mouseoverState: {}, mouseoutState: {}, showLabels: true, labelWidth: 20, labelHeight: 15, labelGap: 6, labelRadius: 3, labelBackingStyles: { fill: "#333", stroke: "#666", "stroke-width": 1, "stroke-linejoin": "round", scale: [1, 1] }, labelBackingHoverStyles: { fill: "#33c", stroke: "#000" }, stateSpecificLabelBackingStyles: {}, stateSpecificLabelBackingHoverStyles: {}, labelTextStyles: { fill: "#fff", stroke: "none", "font-weight": 300, "stroke-width": 0, "font-size": "10px" }, labelTextHoverStyles: {}, stateSpecificLabelTextStyles: {}, stateSpecificLabelTextHoverStyles: {} }; var l = { _init: function (t) { this.options = {}; e.extend(this.options, f, t); var n = this.element.width(); var i = this.element.height(); var s = this.element.width() / o; var l = this.element.height() / u; this.scale = Math.min(s, l); this.labelAreaWidth = Math.ceil(a / this.scale); var c = o + Math.max(0, this.labelAreaWidth - a); this.paper = r(this.element.get(0), c, u); this.paper.setSize(n, i); this.paper.setViewBox(-20, 420, 600, 300, false); this.stateHitAreas = {}; this.stateShapes = {}; this.topShape = null; this._initCreateStates(); this.labelShapes = {}; this.labelTexts = {}; this.labelHitAreas = {}; if (this.options.showLabels) { this._initCreateLabels() } }, _initCreateStates: function () { var t = this.options.stateStyles; var n = this.paper; var r = { FMR: "m 294.52035,650.1546 -0.0801,51.55273 0.0359,1.10315 -7.7903,-1.48992 -5.22302,1.06395 -2.70823,-0.67706 -5.60991,2.9984 -3.48202,0.0967 -2.32134,-0.77378 -3.96563,1.93445 -4.73941,3.28857 -2.22462,2.61151 -0.38689,2.03117 -1.35411,1.45084 -2.32135,0.67706 -0.27191,13.14265 -0.57326,-0.21169 -32.32692,-32.08655 -1.1639,-1.15525 0.57642,-20.16195 0.10859,-16.72035 -0.93266,-9.5339 76.75469,0.85924 z", SHP: "m 203.51811,580.90091 v 23.79741 l -0.70605,0.70605 2.23585,1.41211 0.35303,2.00049 1.32994,1.44075 0.67054,1.85418 2.11817,0.70606 2.58885,1.64746 0.5884,1.88282 3.27057,2.50746 2.49554,1.25816 -0.44389,9.70526 -0.26569,4.25727 0.005,15.14711 1.89915,0.093 76.61485,0.77735 11.88562,-0.71336 1.83773,-2.03118 3.28857,0.29017 6.35857,-5.82248 7.85966,-7.04163 -6.28697,-3.28857 -5.22302,-7.64108 v -14.79856 l -5.80336,-7.35092 v -40.04317 l -5.80336,0.29017 -4.35252,-1.54756 -6.8673,-0.19344 -4.44924,2.12789 -3.09513,2.51479 -7.06075,0.29017 -2.90167,1.25739 -0.67706,3.48202 -2.32135,2.12789 -5.41646,1.16068 H 226.911 l -0.19345,1.16067 -0.29017,6.48041 -22.90953,0.0967 z", SPT: "m 310.18942,561.84655 1e-5,39.84972 5.80336,7.35092 v 14.79856 l 5.22302,7.64108 32.90302,16.69304 1.58957,1.87771 8.04902,-0.4659 v -6.70751 h 8.27263 v -22.8056 h 6.70753 v 7.60186 l 23.25276,0.44716 v -15.42731 l -8.04903,-0.44716 v -7.60187 h 11.40279 v -3.80094 h 4.47168 v 4.02452 h 7.60187 v -44.75364 l -5.37931,-1.85338 -10.63948,-2.41806 -13.92806,-8.99521 -32.40208,-12.28377 -5.1263,-2.41806 -4.44924,-4.83613 -3.48201,-5.80336 -1.25739,-1.54756 -13.251,-2.70824 -2.61151,-0.77378 -2.41807,-5.31974 -8.1247,-6.77058 -4.64268,-3.19185 v 12.86411 h -1.83773 l -2.41807,4.73941 4.35252,7.54436 z", CFT: "m 275.65593,566.41064 2.9052,-1.27552 7.06075,-0.29017 3.09513,-2.51479 4.44924,-2.12789 6.99513,0.23888 4.22469,1.50212 5.80336,-0.29017 -0.38689,-35.30375 -4.35252,-7.54436 2.41807,-4.73941 h 1.83773 v -31.33813 l -2.1279,-3.48201 -2.80496,-4.44924 -4.93285,-1.93446 -3.67546,-3.96562 -0.96723,-1.83773 h -27.27577 l -4.64269,-4.93286 -12.57394,-17.9904 -10.54276,1.35411 -3.96563,4.35252 -21.3757,5.02958 -4.2558,-0.77378 -12.18704,4.44924 -14.79857,-6.19025 -10.99442,-12.96083 0.45495,1.74101 v 42.23772 h 0.47071 l -0.10442,15.10403 29.28803,-0.27688 0.23536,51.4579 1e-5,10.20429 0.58837,1.88282 v 19.34774 l 2.01578,-0.20192 20.89375,-0.0883 0.48362,-7.64108 h 40.33333 l 5.41646,-1.16068 2.32135,-2.12789 0.67353,-3.46389 z" }; var i = {}; for (var s in r) { i = {}; if (this.options.stateSpecificStyles[s]) { e.extend(i, t, this.options.stateSpecificStyles[s]) } else { i = t } this.stateShapes[s] = n.path(r[s]).attr(i); this.topShape = this.stateShapes[s]; this.stateHitAreas[s] = n.path(r[s]).attr({ fill: "#000", "stroke-width": 0, opacity: 0, cursor: "pointer" }); this.stateHitAreas[s].node.dataState = s } this._onClickProxy = e.proxy(this, "_onClick"); this._onMouseOverProxy = e.proxy(this, "_onMouseOver"), this._onMouseOutProxy = e.proxy(this, "_onMouseOut"); for (var s in this.stateHitAreas) { this.stateHitAreas[s].toFront(); e(this.stateHitAreas[s].node).bind("mouseout", this._onMouseOutProxy); e(this.stateHitAreas[s].node).bind("click", this._onClickProxy); e(this.stateHitAreas[s].node).bind("mouseover", this._onMouseOverProxy) } }, _initCreateLabels: function () { var t = this.paper; var n = []; var r = 860; var i = 220; var s = this.options.labelWidth; var o = this.options.labelHeight; var u = this.options.labelGap; var a = this.options.labelRadius; var f = s / this.scale; var l = o / this.scale; var c = (s + u) / this.scale; var h = (o + u) / this.scale * .5; var p = a / this.scale; var d = this.options.labelBackingStyles; var v = this.options.labelTextStyles; var m = {}; for (var g = 0, y, b, w; g < n.length; ++g) { w = n[g]; y = (g + 1) % 2 * c + r; b = g * h + i; m = {}; if (this.options.stateSpecificLabelBackingStyles[w]) { e.extend(m, d, this.options.stateSpecificLabelBackingStyles[w]) } else { m = d } this.labelShapes[w] = t.rect(y, b, f, l, p).attr(m); m = {}; if (this.options.stateSpecificLabelTextStyles[w]) { e.extend(m, v, this.options.stateSpecificLabelTextStyles[w]) } else { e.extend(m, v) } if (m["font-size"]) { m["font-size"] = parseInt(m["font-size"]) / this.scale + "px" } this.labelTexts[w] = t.text(y + f / 2, b + l / 2, w).attr(m); this.labelHitAreas[w] = t.rect(y, b, f, l, p).attr({ fill: "#000", "stroke-width": 0, opacity: 0, cursor: "pointer" }); this.labelHitAreas[w].node.dataState = w } for (var w in this.labelHitAreas) { this.labelHitAreas[w].toFront(); e(this.labelHitAreas[w].node).bind("mouseout", this._onMouseOutProxy); e(this.labelHitAreas[w].node).bind("click", this._onClickProxy); e(this.labelHitAreas[w].node).bind("mouseover", this._onMouseOverProxy) } }, _getStateFromEvent: function (e) { var t = e.target && e.target.dataState || e.dataState; return this._getState(t) }, _getState: function (e) { var t = this.stateShapes[e]; var n = this.stateHitAreas[e]; var r = this.labelShapes[e]; var i = this.labelTexts[e]; var s = this.labelHitAreas[e]; return { shape: t, hitArea: n, name: e, labelBacking: r, labelText: i, labelHitArea: s } }, _onMouseOut: function (e) { var t = this._getStateFromEvent(e); if (!t.hitArea) { return } return !this._triggerEvent("mouseout", e, t) }, _defaultMouseOutAction: function (t) { var n = {}; if (this.options.stateSpecificStyles[t.name]) { e.extend(n, this.options.stateStyles, this.options.stateSpecificStyles[t.name]) } else { n = this.options.stateStyles } t.shape.animate(n, this.options.stateHoverAnimation); if (t.labelBacking) { var n = {}; if (this.options.stateSpecificLabelBackingStyles[t.name]) { e.extend(n, this.options.labelBackingStyles, this.options.stateSpecificLabelBackingStyles[t.name]) } else { n = this.options.labelBackingStyles } t.labelBacking.animate(n, this.options.stateHoverAnimation) } }, _onClick: function (e) { var t = this._getStateFromEvent(e); if (!t.hitArea) { return } return !this._triggerEvent("click", e, t) }, _onMouseOver: function (e) { var t = this._getStateFromEvent(e); if (!t.hitArea) { return } return !this._triggerEvent("mouseover", e, t) }, _defaultMouseOverAction: function (t) { this.bringShapeToFront(t.shape); this.paper.safari(); var n = {}; if (this.options.stateSpecificHoverStyles[t.name]) { e.extend(n, this.options.stateHoverStyles, this.options.stateSpecificHoverStyles[t.name]) } else { n = this.options.stateHoverStyles } t.shape.animate(n, this.options.stateHoverAnimation); if (t.labelBacking) { var n = {}; if (this.options.stateSpecificLabelBackingHoverStyles[t.name]) { e.extend(n, this.options.labelBackingHoverStyles, this.options.stateSpecificLabelBackingHoverStyles[t.name]) } else { n = this.options.labelBackingHoverStyles } t.labelBacking.animate(n, this.options.stateHoverAnimation) } }, _triggerEvent: function (t, n, r) { var i = r.name; var s = false; var o = e.Event("usmap" + t + i); o.originalEvent = n; if (this.options[t + "State"][i]) { s = this.options[t + "State"][i](o, r) === false } if (o.isPropagationStopped()) { this.element.trigger(o, [r]); s = s || o.isDefaultPrevented() } if (!o.isPropagationStopped()) { var u = e.Event("usmap" + t); u.originalEvent = n; if (this.options[t]) { s = this.options[t](u, r) === false || s } if (!u.isPropagationStopped()) { this.element.trigger(u, [r]); s = s || u.isDefaultPrevented() } } if (!s) { switch (t) { case "mouseover": this._defaultMouseOverAction(r); break; case "mouseout": this._defaultMouseOutAction(r); break } } return !s }, trigger: function (e, t, n) { t = t.replace("usmap", ""); e = e.toUpperCase(); var r = this._getState(e); this._triggerEvent(t, n, r) }, bringShapeToFront: function (e) { if (this.topShape) { e.insertAfter(this.topShape) } this.topShape = e } }; var c = []; s(e, "usmap", l, c) })(jQuery, document, window, Raphael)
+(function(e,t,n,r,i){function s(e,t,n,r){r=r instanceof Array?r:[];var i={};for(var s=0;s<r.length;s++){i[r[s]]=true}var o=function(e){this.element=e};o.prototype=n;e.fn[t]=function(){var n=arguments;var r=this;this.each(function(){var s=e(this);var u=s.data("plugin-"+t);if(!u){u=new o(s);s.data("plugin-"+t,u);if(u._init){u._init.apply(u,n)}}else if(typeof n[0]=="string"&&n[0].charAt(0)!="_"&&typeof u[n[0]]=="function"){var a=Array.prototype.slice.call(n,1);var f=u[n[0]].apply(u,a);if(n[0]in i){r=f}}});return r}}var o=370,u=215,a=10;var f={stateStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},stateHoverStyles:{fill:"#33c",stroke:"#000",scale:[1.1,1.1]},stateHoverAnimation:500,stateSpecificStyles:{},stateSpecificHoverStyles:{},click:null,mouseover:null,mouseout:null,clickState:{},mouseoverState:{},mouseoutState:{},showLabels:true,labelWidth:20,labelHeight:15,labelGap:6,labelRadius:3,labelBackingStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},labelBackingHoverStyles:{fill:"#33c",stroke:"#000"},stateSpecificLabelBackingStyles:{},stateSpecificLabelBackingHoverStyles:{},labelTextStyles:{fill:"#fff",stroke:"none","font-weight":300,"stroke-width":0,"font-size":"10px"},labelTextHoverStyles:{},stateSpecificLabelTextStyles:{},stateSpecificLabelTextHoverStyles:{}};var l={_init:function(t){this.options={};e.extend(this.options,f,t);var n=this.element.width();var i=this.element.height();var s=this.element.width()/o;var l=this.element.height()/u;this.scale=Math.min(s,l);this.labelAreaWidth=Math.ceil(a/this.scale);var c=o+Math.max(0,this.labelAreaWidth-a);this.paper=r(this.element.get(0),c,u);this.paper.setSize(n,i);this.paper.setViewBox(-20, 420, 600, 300, false);this.stateHitAreas={};this.stateShapes={};this.topShape=null;this._initCreateStates();this.labelShapes={};this.labelTexts={};this.labelHitAreas={};if(this.options.showLabels){this._initCreateLabels()}},_initCreateStates:function(){var t=this.options.stateStyles;var n=this.paper;var r={FMR:"m 294.52035,650.1546 -0.0801,51.55273 0.0359,1.10315 -7.7903,-1.48992 -5.22302,1.06395 -2.70823,-0.67706 -5.60991,2.9984 -3.48202,0.0967 -2.32134,-0.77378 -3.96563,1.93445 -4.73941,3.28857 -2.22462,2.61151 -0.38689,2.03117 -1.35411,1.45084 -2.32135,0.67706 -0.27191,13.14265 -0.57326,-0.21169 -32.32692,-32.08655 -1.1639,-1.15525 0.57642,-20.16195 0.10859,-16.72035 -0.93266,-9.5339 76.75469,0.85924 z", SHP:"m 203.51811,580.90091 v 23.79741 l -0.70605,0.70605 2.23585,1.41211 0.35303,2.00049 1.32994,1.44075 0.67054,1.85418 2.11817,0.70606 2.58885,1.64746 0.5884,1.88282 3.27057,2.50746 2.49554,1.25816 -0.44389,9.70526 -0.26569,4.25727 0.005,15.14711 1.89915,0.093 76.61485,0.77735 11.88562,-0.71336 1.83773,-2.03118 3.28857,0.29017 6.35857,-5.82248 7.85966,-7.04163 -6.28697,-3.28857 -5.22302,-7.64108 v -14.79856 l -5.80336,-7.35092 v -40.04317 l -5.80336,0.29017 -4.35252,-1.54756 -6.8673,-0.19344 -4.44924,2.12789 -3.09513,2.51479 -7.06075,0.29017 -2.90167,1.25739 -0.67706,3.48202 -2.32135,2.12789 -5.41646,1.16068 H 226.911 l -0.19345,1.16067 -0.29017,6.48041 -22.90953,0.0967 z", SPT:"m 310.18942,561.84655 1e-5,39.84972 5.80336,7.35092 v 14.79856 l 5.22302,7.64108 32.90302,16.69304 1.58957,1.87771 8.04902,-0.4659 v -6.70751 h 8.27263 v -22.8056 h 6.70753 v 7.60186 l 23.25276,0.44716 v -15.42731 l -8.04903,-0.44716 v -7.60187 h 11.40279 v -3.80094 h 4.47168 v 4.02452 h 7.60187 v -44.75364 l -5.37931,-1.85338 -10.63948,-2.41806 -13.92806,-8.99521 -32.40208,-12.28377 -5.1263,-2.41806 -4.44924,-4.83613 -3.48201,-5.80336 -1.25739,-1.54756 -13.251,-2.70824 -2.61151,-0.77378 -2.41807,-5.31974 -8.1247,-6.77058 -4.64268,-3.19185 v 12.86411 h -1.83773 l -2.41807,4.73941 4.35252,7.54436 z", CFT:"m 275.65593,566.41064 2.9052,-1.27552 7.06075,-0.29017 3.09513,-2.51479 4.44924,-2.12789 6.99513,0.23888 4.22469,1.50212 5.80336,-0.29017 -0.38689,-35.30375 -4.35252,-7.54436 2.41807,-4.73941 h 1.83773 v -31.33813 l -2.1279,-3.48201 -2.80496,-4.44924 -4.93285,-1.93446 -3.67546,-3.96562 -0.96723,-1.83773 h -27.27577 l -4.64269,-4.93286 -12.57394,-17.9904 -10.54276,1.35411 -3.96563,4.35252 -21.3757,5.02958 -4.2558,-0.77378 -12.18704,4.44924 -14.79857,-6.19025 -10.99442,-12.96083 0.45495,1.74101 v 42.23772 h 0.47071 l -0.10442,15.10403 29.28803,-0.27688 0.23536,51.4579 1e-5,10.20429 0.58837,1.88282 v 19.34774 l 2.01578,-0.20192 20.89375,-0.0883 0.48362,-7.64108 h 40.33333 l 5.41646,-1.16068 2.32135,-2.12789 0.67353,-3.46389 z"};var i={};for(var s in r){i={};if(this.options.stateSpecificStyles[s]){e.extend(i,t,this.options.stateSpecificStyles[s])}else{i=t}this.stateShapes[s]=n.path(r[s]).attr(i);this.topShape=this.stateShapes[s];this.stateHitAreas[s]=n.path(r[s]).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.stateHitAreas[s].node.dataState=s}this._onClickProxy=e.proxy(this,"_onClick");this._onMouseOverProxy=e.proxy(this,"_onMouseOver"),this._onMouseOutProxy=e.proxy(this,"_onMouseOut");for(var s in this.stateHitAreas){this.stateHitAreas[s].toFront();e(this.stateHitAreas[s].node).bind("mouseout",this._onMouseOutProxy);e(this.stateHitAreas[s].node).bind("click",this._onClickProxy);e(this.stateHitAreas[s].node).bind("mouseover",this._onMouseOverProxy)}},_initCreateLabels:function(){var t=this.paper;var n=[];var r=860;var i=220;var s=this.options.labelWidth;var o=this.options.labelHeight;var u=this.options.labelGap;var a=this.options.labelRadius;var f=s/this.scale;var l=o/this.scale;var c=(s+u)/this.scale;var h=(o+u)/this.scale*.5;var p=a/this.scale;var d=this.options.labelBackingStyles;var v=this.options.labelTextStyles;var m={};for(var g=0,y,b,w;g<n.length;++g){w=n[g];y=(g+1)%2*c+r;b=g*h+i;m={};if(this.options.stateSpecificLabelBackingStyles[w]){e.extend(m,d,this.options.stateSpecificLabelBackingStyles[w])}else{m=d}this.labelShapes[w]=t.rect(y,b,f,l,p).attr(m);m={};if(this.options.stateSpecificLabelTextStyles[w]){e.extend(m,v,this.options.stateSpecificLabelTextStyles[w])}else{e.extend(m,v)}if(m["font-size"]){m["font-size"]=parseInt(m["font-size"])/this.scale+"px"}this.labelTexts[w]=t.text(y+f/2,b+l/2,w).attr(m);this.labelHitAreas[w]=t.rect(y,b,f,l,p).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.labelHitAreas[w].node.dataState=w}for(var w in this.labelHitAreas){this.labelHitAreas[w].toFront();e(this.labelHitAreas[w].node).bind("mouseout",this._onMouseOutProxy);e(this.labelHitAreas[w].node).bind("click",this._onClickProxy);e(this.labelHitAreas[w].node).bind("mouseover",this._onMouseOverProxy)}},_getStateFromEvent:function(e){var t=e.target&&e.target.dataState||e.dataState;return this._getState(t)},_getState:function(e){var t=this.stateShapes[e];var n=this.stateHitAreas[e];var r=this.labelShapes[e];var i=this.labelTexts[e];var s=this.labelHitAreas[e];return{shape:t,hitArea:n,name:e,labelBacking:r,labelText:i,labelHitArea:s}},_onMouseOut:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseout",e,t)},_defaultMouseOutAction:function(t){var n={};if(this.options.stateSpecificStyles[t.name]){e.extend(n,this.options.stateStyles,this.options.stateSpecificStyles[t.name])}else{n=this.options.stateStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingStyles[t.name]){e.extend(n,this.options.labelBackingStyles,this.options.stateSpecificLabelBackingStyles[t.name])}else{n=this.options.labelBackingStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_onClick:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("click",e,t)},_onMouseOver:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseover",e,t)},_defaultMouseOverAction:function(t){this.bringShapeToFront(t.shape);this.paper.safari();var n={};if(this.options.stateSpecificHoverStyles[t.name]){e.extend(n,this.options.stateHoverStyles,this.options.stateSpecificHoverStyles[t.name])}else{n=this.options.stateHoverStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingHoverStyles[t.name]){e.extend(n,this.options.labelBackingHoverStyles,this.options.stateSpecificLabelBackingHoverStyles[t.name])}else{n=this.options.labelBackingHoverStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_triggerEvent:function(t,n,r){var i=r.name;var s=false;var o=e.Event("usmap"+t+i);o.originalEvent=n;if(this.options[t+"State"][i]){s=this.options[t+"State"][i](o,r)===false}if(o.isPropagationStopped()){this.element.trigger(o,[r]);s=s||o.isDefaultPrevented()}if(!o.isPropagationStopped()){var u=e.Event("usmap"+t);u.originalEvent=n;if(this.options[t]){s=this.options[t](u,r)===false||s}if(!u.isPropagationStopped()){this.element.trigger(u,[r]);s=s||u.isDefaultPrevented()}}if(!s){switch(t){case"mouseover":this._defaultMouseOverAction(r);break;case"mouseout":this._defaultMouseOutAction(r);break}}return!s},trigger:function(e,t,n){t=t.replace("usmap","");e=e.toUpperCase();var r=this._getState(e);this._triggerEvent(t,n,r)},bringShapeToFront:function(e){if(this.topShape){e.insertAfter(this.topShape)}this.topShape=e}};var c=[];s(e,"usmap",l,c)})(jQuery,document,window,Raphael)
 
 campaignTrail_temp.questions_json = [
     {
@@ -784,7 +784,7 @@ campaignTrail_temp.answers_json = [
         "pk": 14637,
         "fields": {
             "question": 14633,
-            "description": "A valuable shell passed down from your Mother. A symbol of status.\n"
+            "description": "A valuable shell passed down from your Mother. A symbol of status."
         }
     },
     {
@@ -792,7 +792,7 @@ campaignTrail_temp.answers_json = [
         "pk": 14638,
         "fields": {
             "question": 14633,
-            "description": "A sculpture of a sacred cow carved by your friend Eḱwos from an ancient tree.",
+            "description": "A sculpture of a sacred cow carved by your friend Eḱwos from an ancient tree."
         }
     },
     {
@@ -800,7 +800,7 @@ campaignTrail_temp.answers_json = [
         "pk": 14640,
         "fields": {
             "question": 14639,
-            "description": "Farmer. A position of wealth and power.\n"
+            "description": "Farmer. A position of wealth and power."
         }
     },
     {
@@ -3355,7 +3355,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14680,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": 0.0001
+            "global_multiplier": -0.1
         }
     },
     {
@@ -3375,7 +3375,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14682,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": 0.01
+            "global_multiplier": -0.05
         }
     },
     {
@@ -3395,7 +3395,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14685,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": -0.001
+            "global_multiplier": -0.01
         }
     },
     {
@@ -3405,7 +3405,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14689,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": -0.1
+            "global_multiplier": -0.2
         }
     },
     {
@@ -3415,7 +3415,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14690,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": 0
+            "global_multiplier": -0.01
         }
     },
     {
@@ -3425,7 +3425,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14688,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": -0.01
+            "global_multiplier": -0.1
         }
     },
     {
@@ -3435,7 +3435,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14692,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": -0.1
+            "global_multiplier": -0.2
         }
     },
     {
@@ -3445,7 +3445,7 @@ campaignTrail_temp.answer_score_global_json = [
             "answer": 14694,
             "candidate": 131,
             "affected_candidate": 131,
-            "global_multiplier": -0.01
+            "global_multiplier": -0.03
         }
     },
     {
@@ -3466,16 +3466,6 @@ campaignTrail_temp.answer_score_global_json = [
             "candidate": 131,
             "affected_candidate": 131,
             "global_multiplier": 0.001
-        }
-    },
-    {
-        "model": "campaign_trail.answer_score_global",
-        "pk": 14824,
-        "fields": {
-            "answer": 14702,
-            "candidate": 131,
-            "affected_candidate": 131,
-            "global_multiplier": 0.01
         }
     },
     {
@@ -3506,6 +3496,26 @@ campaignTrail_temp.answer_score_global_json = [
             "candidate": 131,
             "affected_candidate": 131,
             "global_multiplier": 0.01
+        }
+    },
+    {
+        "model": "campaign_trail.answer_score_global",
+        "pk": 14837,
+        "fields": {
+            "answer": 14693,
+            "candidate": 131,
+            "affected_candidate": 131,
+            "global_multiplier": -0.01
+        }
+    },
+    {
+        "model": "campaign_trail.answer_score_global",
+        "pk": 14838,
+        "fields": {
+            "answer": 14700,
+            "candidate": 131,
+            "affected_candidate": 131,
+            "global_multiplier": -0.02
         }
     }
 ]
@@ -5724,7 +5734,6 @@ campaignTrail_temp.multiple_endings = true;
 campaignTrail_temp.cyoa = true
 
 function answerFromQuestion(answerPk, questionPk) {
-    console.log(answerPk, questionPk, campaignTrail_temp.answers_json.filter((x) => x.pk == answerPk))
     return campaignTrail_temp.answers_json.filter((x) => x.pk == answerPk)[0].fields.question == questionPk
 }
 
@@ -5741,6 +5750,9 @@ let job = "";
 let executed = false;
 let wife = false;
 let pregnant = true;
+
+let farmersMakeGraves = false;
+let leftFoodOut = false;
 
 cyoAdventure = function (question) {
 
@@ -5775,6 +5787,12 @@ cyoAdventure = function (question) {
     }
     else if (a == 14641) {
         keepsake = "spiritual"
+    }
+    else if (a == 14654) {
+        farmersMakeGraves = true;
+    }
+    else if(a == 14694) {
+        leftFoodOut = true;
     }
 
     if (a == 14721) {
@@ -5832,16 +5850,92 @@ endingPicker = (out, totv, aa, quickstats) => {
     console.log(quickstats)
     let pv = quickstats[2];
 
-    if (pv > 50) {
-        setImage("https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/dawn.png?raw=true");
-        return "Your tribe has made it through the brutal Winter. Those still among the living celebrate your leadership. You are a renowned leader.";
-    }
-    else {
+    function getOverall() { 
+        if(pv > 50) {
+            setImage("https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/dawn.png?raw=true");
+            return "<p>Your tribe has made it through the brutal Winter. Those still among the living celebrate your leadership.</p>"
+        }
+        
         setImage("https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/chaos.png?raw=true")
-        return "Chaos won";
+        return "<p>Chaos has reigned supreme. Unfortunately you did not survive the Winter. Your people are lost to the time.</p>";
     }
 
-    return out
+    function getLeadership() {
+        let leadership = ""
+        if(pv > 95) {
+            leadership = "You are renowned by your community. A leader like you only comes along once a millenia. Statues are built in your honour and fables are told of this Winter."
+        }
+        else if(pv > 90) {
+            leadership = "You were an invaluable asset during such a harsh Winter. Your legacy echoes through time. In the years to come linguists will disover that the word in many languages for Leader stems from your name."
+        }
+        else if(pv > 75) {
+            leadership = "Your leadership skills were useful during such a tough Winter. Although you didn't always make the right choices, you held it together enough to call yourself a survivor."
+        }
+        else if(pv > 50) {
+            leadership = "Under your guidence, your people were able to barely survive the Winter. Hopefully next time you will be more prepared."
+        }
+        else {
+            leadership = "Your leadership skills were not enough. You are not a true leader."
+        }
+        return "<p>" + leadership + "<p>";
+    }
+
+    function getFamily() {
+        let family = "";
+
+        if(wife && pregnant) {
+            if(leadership > 80) {
+                family = "In the years after the famine, you were able to raise a small family. Your ancestors had influence for years to come and tales of their deeds have been passed down in some form to the modern day."
+            }
+            else {
+                family = "You had a small family in the years following the famine. You lived a good life surrounded by those you love."
+            }
+        }
+        else if(wife) {
+            family = "You and wife spent the rest of your days together. Whether you were happy or not is up to you.";
+        }
+        else {
+            family = "You died alone. Unmarried and with no ancestors to carry on your bloodline. Hopefully you found other ways to leave your mark."
+        }
+
+        return "<p>" + family + "<p>";
+    }
+
+    function getCulturalInfluence() {
+        if(pv < 50) {
+            return "<p>The history of your people is forgotten. No evidence of you was left behind. It is like you never existed.</p>";
+        }
+
+        influence = ""
+
+        if(pv > 80) {
+            influence += "<p>The way your people lived had a profound effect on many cultures around the world.</p>"
+        } else {
+            influence += "<p>Your people and culture spread out over time. Until it got harder and harder to trace exactly where and who you used to be. Though in the late 1800s a group of researchers managed to use linguistics to make some guesses.<p>"
+        }
+    
+        if(farmersMakeGraves) {
+            if(pv > 85) {
+                influence += "<p>After your encouragment (or lack of discouragement), farmers continued to decorate their ancestors graves with copper. In fact, the practice is still practiced in the modern era, though no one knows where it originated. Except you.</p>"
+            } else {
+                influence += "<p>After your encouragement, farmers continued to decorate their ancestors graves with copper. In the 20th century archiologists uncovered the ruins of your settlement and found evidence that some graves were covered in copper, while others were not. No one knows why.</p>"
+            }
+        }
+
+        if(leftFoodOut) {
+            influence += "<p>The practice of leaving food for ancestral spirits";
+            if(pv > 80) {
+                influence += " caught on in the years after the famine. It is said if one leaves food out once a year at Winter, next year's harvest will be plentiful.</p>"
+            }
+            else {
+                influence += " never really caught on. It was the start of a decline in belief in spirits. Until one day they were nothing more than just wivestales.</p>"
+            }
+        }
+
+
+    }
+
+    return getOverall() + getLeadership() + getFamily() + getCulturalInfluence();
 }
 
 
