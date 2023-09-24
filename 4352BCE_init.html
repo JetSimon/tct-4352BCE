@@ -1,8 +1,21 @@
+campaignTrail_temp.achievements = {
+  "A Gift" : {
+      "image" : "https://i.imgur.com/rNCJOxI.png",
+      "description" : "Give the gift back.",
+      "cannotBeCheated" : true
+  },
+  "Good Farmers Give Good Advice" : {
+      "image" : "https://i.imgur.com/yXON0mu.png",
+      "description" : "Use your expertise to your advantage.",
+      "cannotBeCheated" : true
+  }
+}
+
 e = campaignTrail_temp;
 
-nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#7bbfea";
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#479658";
 
-nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#38a2bc";
+nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#1e7330";
 
 document.getElementsByClassName("game_header")[0].style.backgroundColor =
   nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
@@ -25,7 +38,7 @@ e.election_json = [
     fields: {
       year: 2016,
       summary:
-        "<p>The year is 4352BCE. You are the newly appointed leader of a small group of ~200 people who live in what is now the Danube Valley, near modern day Ukraine.</p><p>Your choices as leader will determine the fate of your people and perhaps echo out to shape civilizations for millenia to come.</p><p>Will you be able to guide your people out of famine, or will your culture vanish into dust?</p>",
+        "<div style='overflow-y:scroll;height:200px;'><p>The year is 4352BCE. You are the newly appointed leader of a small group of ~200 people who live in what is now the Danube Valley, near modern day Ukraine.</p><p>Your choices as leader will determine the fate of your people and perhaps echo out to shape civilizations for millenia to come.</p><p>Will you be able to guide your people out of famine, or will your culture vanish into dust?</p><p>It is recommended that you play on a harder difficulty for this mod.</p><br><p style='font-size:sm'><span style='font-weight:bolder'>DISCLAIMER:</span> What we know of Proto Indo European people is mostly from educated guesses. We have no physical evidence of their culture and infer mainly based on their influence on many languages and cultures of the modern day. As such this mod takes a lot artistic liberties depicting their culture and values. I have based as much as I can off of my research, but I am in no way claiming this to be the most accurate representation of PIE people.</p></div>",
       image_url:
         "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/electionimage.png?raw=true",
       winning_electoral_vote_number: 270,

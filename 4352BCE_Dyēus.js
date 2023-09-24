@@ -1040,7 +1040,7 @@ campaignTrail_temp.answers_json = [
         "pk": 14681,
         "fields": {
             "question": 14679,
-            "description": "(If you were a farmer) When I was a farmer, I would make sure to plant my crops in only a certain order to ensure a bountiful harvest.\n",
+            "description": "When I was a farmer, I would make sure to plant my crops in only a certain order to ensure a bountiful harvest.\n",
             "condition": "job == 'farmer'"
         }
     },
@@ -1257,7 +1257,7 @@ campaignTrail_temp.answers_json = [
         "pk": 14720,
         "fields": {
             "question": 14655,
-            "description": "(If you worship H₂éwsōs) It is just H₂éwsōs beginning her rebirth.\n",
+            "description": "It is just H₂éwsōs beginning her rebirth.\n",
             "condition": "campaignTrail_temp.running_mate_last_name == 'H₂éwsōs'"
         }
     },
@@ -1266,7 +1266,7 @@ campaignTrail_temp.answers_json = [
         "pk": 14721,
         "fields": {
             "question": 14667,
-            "description": "(If you chose cow sculpture) I will attend and bury my cow sculpture with him.",
+            "description": "I will attend and bury my cow sculpture with him.",
             "condition": "keepsake == 'cow'"
         }
     },
@@ -5777,7 +5777,30 @@ cyoAdventure = function (question) {
         keepsake = "spiritual"
     }
 
+    if(a == 14721) {
+        unlockAchievement("A Gift");
+    } else if(a == 14681) {
+        unlockAchievement("Good Farmers Give Good Advice");
+    }
+
     if(q == 14683) {
+        // change theme to winter
+        document.body.background =
+        "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/winter.jpeg?raw=true";
+
+        nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#7bbfea";
+
+        nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#38a2bc";
+
+        document.getElementsByClassName("game_header")[0].style.backgroundColor =
+        nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
+
+        $("#game_window")[0].style.backgroundColor =
+        nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
+
+        $(".container")[0].style.backgroundColor = "#372d1f";
+
+
         music.pause();
         music = new Audio('https://github.com/JetSimon/tct-4352BCE/raw/main/rawimages/winter.mp3');
         music.loop = true;
