@@ -1,6 +1,6 @@
 
 // Generated mapping code
-(function(e,t,n,r,i){function s(e,t,n,r){r=r instanceof Array?r:[];var i={};for(var s=0;s<r.length;s++){i[r[s]]=true}var o=function(e){this.element=e};o.prototype=n;e.fn[t]=function(){var n=arguments;var r=this;this.each(function(){var s=e(this);var u=s.data("plugin-"+t);if(!u){u=new o(s);s.data("plugin-"+t,u);if(u._init){u._init.apply(u,n)}}else if(typeof n[0]=="string"&&n[0].charAt(0)!="_"&&typeof u[n[0]]=="function"){var a=Array.prototype.slice.call(n,1);var f=u[n[0]].apply(u,a);if(n[0]in i){r=f}}});return r}}var o=370,u=215,a=10;var f={stateStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},stateHoverStyles:{fill:"#33c",stroke:"#000",scale:[1.1,1.1]},stateHoverAnimation:500,stateSpecificStyles:{},stateSpecificHoverStyles:{},click:null,mouseover:null,mouseout:null,clickState:{},mouseoverState:{},mouseoutState:{},showLabels:true,labelWidth:20,labelHeight:15,labelGap:6,labelRadius:3,labelBackingStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},labelBackingHoverStyles:{fill:"#33c",stroke:"#000"},stateSpecificLabelBackingStyles:{},stateSpecificLabelBackingHoverStyles:{},labelTextStyles:{fill:"#fff",stroke:"none","font-weight":300,"stroke-width":0,"font-size":"10px"},labelTextHoverStyles:{},stateSpecificLabelTextStyles:{},stateSpecificLabelTextHoverStyles:{}};var l={_init:function(t){this.options={};e.extend(this.options,f,t);var n=this.element.width();var i=this.element.height();var s=this.element.width()/o;var l=this.element.height()/u;this.scale=Math.min(s,l);this.labelAreaWidth=Math.ceil(a/this.scale);var c=o+Math.max(0,this.labelAreaWidth-a);this.paper=r(this.element.get(0),c,u);this.paper.setSize(n,i);this.paper.setViewBox(-20, 420, 600, 300, false);this.stateHitAreas={};this.stateShapes={};this.topShape=null;this._initCreateStates();this.labelShapes={};this.labelTexts={};this.labelHitAreas={};if(this.options.showLabels){this._initCreateLabels()}},_initCreateStates:function(){var t=this.options.stateStyles;var n=this.paper;var r={FMR:"m 294.52035,650.1546 -0.0801,51.55273 0.0359,1.10315 -7.7903,-1.48992 -5.22302,1.06395 -2.70823,-0.67706 -5.60991,2.9984 -3.48202,0.0967 -2.32134,-0.77378 -3.96563,1.93445 -4.73941,3.28857 -2.22462,2.61151 -0.38689,2.03117 -1.35411,1.45084 -2.32135,0.67706 -0.27191,13.14265 -0.57326,-0.21169 -32.32692,-32.08655 -1.1639,-1.15525 0.57642,-20.16195 0.10859,-16.72035 -0.93266,-9.5339 76.75469,0.85924 z", SHP:"m 203.51811,580.90091 v 23.79741 l -0.70605,0.70605 2.23585,1.41211 0.35303,2.00049 1.32994,1.44075 0.67054,1.85418 2.11817,0.70606 2.58885,1.64746 0.5884,1.88282 3.27057,2.50746 2.49554,1.25816 -0.44389,9.70526 -0.26569,4.25727 0.005,15.14711 1.89915,0.093 76.61485,0.77735 11.88562,-0.71336 1.83773,-2.03118 3.28857,0.29017 6.35857,-5.82248 7.85966,-7.04163 -6.28697,-3.28857 -5.22302,-7.64108 v -14.79856 l -5.80336,-7.35092 v -40.04317 l -5.80336,0.29017 -4.35252,-1.54756 -6.8673,-0.19344 -4.44924,2.12789 -3.09513,2.51479 -7.06075,0.29017 -2.90167,1.25739 -0.67706,3.48202 -2.32135,2.12789 -5.41646,1.16068 H 226.911 l -0.19345,1.16067 -0.29017,6.48041 -22.90953,0.0967 z", SPT:"m 310.18942,561.84655 1e-5,39.84972 5.80336,7.35092 v 14.79856 l 5.22302,7.64108 32.90302,16.69304 1.58957,1.87771 8.04902,-0.4659 v -6.70751 h 8.27263 v -22.8056 h 6.70753 v 7.60186 l 23.25276,0.44716 v -15.42731 l -8.04903,-0.44716 v -7.60187 h 11.40279 v -3.80094 h 4.47168 v 4.02452 h 7.60187 v -44.75364 l -5.37931,-1.85338 -10.63948,-2.41806 -13.92806,-8.99521 -32.40208,-12.28377 -5.1263,-2.41806 -4.44924,-4.83613 -3.48201,-5.80336 -1.25739,-1.54756 -13.251,-2.70824 -2.61151,-0.77378 -2.41807,-5.31974 -8.1247,-6.77058 -4.64268,-3.19185 v 12.86411 h -1.83773 l -2.41807,4.73941 4.35252,7.54436 z", CFT:"m 275.65593,566.41064 2.9052,-1.27552 7.06075,-0.29017 3.09513,-2.51479 4.44924,-2.12789 6.99513,0.23888 4.22469,1.50212 5.80336,-0.29017 -0.38689,-35.30375 -4.35252,-7.54436 2.41807,-4.73941 h 1.83773 v -31.33813 l -2.1279,-3.48201 -2.80496,-4.44924 -4.93285,-1.93446 -3.67546,-3.96562 -0.96723,-1.83773 h -27.27577 l -4.64269,-4.93286 -12.57394,-17.9904 -10.54276,1.35411 -3.96563,4.35252 -21.3757,5.02958 -4.2558,-0.77378 -12.18704,4.44924 -14.79857,-6.19025 -10.99442,-12.96083 0.45495,1.74101 v 42.23772 h 0.47071 l -0.10442,15.10403 29.28803,-0.27688 0.23536,51.4579 1e-5,10.20429 0.58837,1.88282 v 19.34774 l 2.01578,-0.20192 20.89375,-0.0883 0.48362,-7.64108 h 40.33333 l 5.41646,-1.16068 2.32135,-2.12789 0.67353,-3.46389 z"};var i={};for(var s in r){i={};if(this.options.stateSpecificStyles[s]){e.extend(i,t,this.options.stateSpecificStyles[s])}else{i=t}this.stateShapes[s]=n.path(r[s]).attr(i);this.topShape=this.stateShapes[s];this.stateHitAreas[s]=n.path(r[s]).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.stateHitAreas[s].node.dataState=s}this._onClickProxy=e.proxy(this,"_onClick");this._onMouseOverProxy=e.proxy(this,"_onMouseOver"),this._onMouseOutProxy=e.proxy(this,"_onMouseOut");for(var s in this.stateHitAreas){this.stateHitAreas[s].toFront();e(this.stateHitAreas[s].node).bind("mouseout",this._onMouseOutProxy);e(this.stateHitAreas[s].node).bind("click",this._onClickProxy);e(this.stateHitAreas[s].node).bind("mouseover",this._onMouseOverProxy)}},_initCreateLabels:function(){var t=this.paper;var n=[];var r=860;var i=220;var s=this.options.labelWidth;var o=this.options.labelHeight;var u=this.options.labelGap;var a=this.options.labelRadius;var f=s/this.scale;var l=o/this.scale;var c=(s+u)/this.scale;var h=(o+u)/this.scale*.5;var p=a/this.scale;var d=this.options.labelBackingStyles;var v=this.options.labelTextStyles;var m={};for(var g=0,y,b,w;g<n.length;++g){w=n[g];y=(g+1)%2*c+r;b=g*h+i;m={};if(this.options.stateSpecificLabelBackingStyles[w]){e.extend(m,d,this.options.stateSpecificLabelBackingStyles[w])}else{m=d}this.labelShapes[w]=t.rect(y,b,f,l,p).attr(m);m={};if(this.options.stateSpecificLabelTextStyles[w]){e.extend(m,v,this.options.stateSpecificLabelTextStyles[w])}else{e.extend(m,v)}if(m["font-size"]){m["font-size"]=parseInt(m["font-size"])/this.scale+"px"}this.labelTexts[w]=t.text(y+f/2,b+l/2,w).attr(m);this.labelHitAreas[w]=t.rect(y,b,f,l,p).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.labelHitAreas[w].node.dataState=w}for(var w in this.labelHitAreas){this.labelHitAreas[w].toFront();e(this.labelHitAreas[w].node).bind("mouseout",this._onMouseOutProxy);e(this.labelHitAreas[w].node).bind("click",this._onClickProxy);e(this.labelHitAreas[w].node).bind("mouseover",this._onMouseOverProxy)}},_getStateFromEvent:function(e){var t=e.target&&e.target.dataState||e.dataState;return this._getState(t)},_getState:function(e){var t=this.stateShapes[e];var n=this.stateHitAreas[e];var r=this.labelShapes[e];var i=this.labelTexts[e];var s=this.labelHitAreas[e];return{shape:t,hitArea:n,name:e,labelBacking:r,labelText:i,labelHitArea:s}},_onMouseOut:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseout",e,t)},_defaultMouseOutAction:function(t){var n={};if(this.options.stateSpecificStyles[t.name]){e.extend(n,this.options.stateStyles,this.options.stateSpecificStyles[t.name])}else{n=this.options.stateStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingStyles[t.name]){e.extend(n,this.options.labelBackingStyles,this.options.stateSpecificLabelBackingStyles[t.name])}else{n=this.options.labelBackingStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_onClick:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("click",e,t)},_onMouseOver:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseover",e,t)},_defaultMouseOverAction:function(t){this.bringShapeToFront(t.shape);this.paper.safari();var n={};if(this.options.stateSpecificHoverStyles[t.name]){e.extend(n,this.options.stateHoverStyles,this.options.stateSpecificHoverStyles[t.name])}else{n=this.options.stateHoverStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingHoverStyles[t.name]){e.extend(n,this.options.labelBackingHoverStyles,this.options.stateSpecificLabelBackingHoverStyles[t.name])}else{n=this.options.labelBackingHoverStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_triggerEvent:function(t,n,r){var i=r.name;var s=false;var o=e.Event("usmap"+t+i);o.originalEvent=n;if(this.options[t+"State"][i]){s=this.options[t+"State"][i](o,r)===false}if(o.isPropagationStopped()){this.element.trigger(o,[r]);s=s||o.isDefaultPrevented()}if(!o.isPropagationStopped()){var u=e.Event("usmap"+t);u.originalEvent=n;if(this.options[t]){s=this.options[t](u,r)===false||s}if(!u.isPropagationStopped()){this.element.trigger(u,[r]);s=s||u.isDefaultPrevented()}}if(!s){switch(t){case"mouseover":this._defaultMouseOverAction(r);break;case"mouseout":this._defaultMouseOutAction(r);break}}return!s},trigger:function(e,t,n){t=t.replace("usmap","");e=e.toUpperCase();var r=this._getState(e);this._triggerEvent(t,n,r)},bringShapeToFront:function(e){if(this.topShape){e.insertAfter(this.topShape)}this.topShape=e}};var c=[];s(e,"usmap",l,c)})(jQuery,document,window,Raphael)
+(function (e, t, n, r, i) { function s(e, t, n, r) { r = r instanceof Array ? r : []; var i = {}; for (var s = 0; s < r.length; s++) { i[r[s]] = true } var o = function (e) { this.element = e }; o.prototype = n; e.fn[t] = function () { var n = arguments; var r = this; this.each(function () { var s = e(this); var u = s.data("plugin-" + t); if (!u) { u = new o(s); s.data("plugin-" + t, u); if (u._init) { u._init.apply(u, n) } } else if (typeof n[0] == "string" && n[0].charAt(0) != "_" && typeof u[n[0]] == "function") { var a = Array.prototype.slice.call(n, 1); var f = u[n[0]].apply(u, a); if (n[0] in i) { r = f } } }); return r } } var o = 370, u = 215, a = 10; var f = { stateStyles: { fill: "#333", stroke: "#666", "stroke-width": 1, "stroke-linejoin": "round", scale: [1, 1] }, stateHoverStyles: { fill: "#33c", stroke: "#000", scale: [1.1, 1.1] }, stateHoverAnimation: 500, stateSpecificStyles: {}, stateSpecificHoverStyles: {}, click: null, mouseover: null, mouseout: null, clickState: {}, mouseoverState: {}, mouseoutState: {}, showLabels: true, labelWidth: 20, labelHeight: 15, labelGap: 6, labelRadius: 3, labelBackingStyles: { fill: "#333", stroke: "#666", "stroke-width": 1, "stroke-linejoin": "round", scale: [1, 1] }, labelBackingHoverStyles: { fill: "#33c", stroke: "#000" }, stateSpecificLabelBackingStyles: {}, stateSpecificLabelBackingHoverStyles: {}, labelTextStyles: { fill: "#fff", stroke: "none", "font-weight": 300, "stroke-width": 0, "font-size": "10px" }, labelTextHoverStyles: {}, stateSpecificLabelTextStyles: {}, stateSpecificLabelTextHoverStyles: {} }; var l = { _init: function (t) { this.options = {}; e.extend(this.options, f, t); var n = this.element.width(); var i = this.element.height(); var s = this.element.width() / o; var l = this.element.height() / u; this.scale = Math.min(s, l); this.labelAreaWidth = Math.ceil(a / this.scale); var c = o + Math.max(0, this.labelAreaWidth - a); this.paper = r(this.element.get(0), c, u); this.paper.setSize(n, i); this.paper.setViewBox(-20, 420, 600, 300, false); this.stateHitAreas = {}; this.stateShapes = {}; this.topShape = null; this._initCreateStates(); this.labelShapes = {}; this.labelTexts = {}; this.labelHitAreas = {}; if (this.options.showLabels) { this._initCreateLabels() } }, _initCreateStates: function () { var t = this.options.stateStyles; var n = this.paper; var r = { FMR: "m 294.52035,650.1546 -0.0801,51.55273 0.0359,1.10315 -7.7903,-1.48992 -5.22302,1.06395 -2.70823,-0.67706 -5.60991,2.9984 -3.48202,0.0967 -2.32134,-0.77378 -3.96563,1.93445 -4.73941,3.28857 -2.22462,2.61151 -0.38689,2.03117 -1.35411,1.45084 -2.32135,0.67706 -0.27191,13.14265 -0.57326,-0.21169 -32.32692,-32.08655 -1.1639,-1.15525 0.57642,-20.16195 0.10859,-16.72035 -0.93266,-9.5339 76.75469,0.85924 z", SHP: "m 203.51811,580.90091 v 23.79741 l -0.70605,0.70605 2.23585,1.41211 0.35303,2.00049 1.32994,1.44075 0.67054,1.85418 2.11817,0.70606 2.58885,1.64746 0.5884,1.88282 3.27057,2.50746 2.49554,1.25816 -0.44389,9.70526 -0.26569,4.25727 0.005,15.14711 1.89915,0.093 76.61485,0.77735 11.88562,-0.71336 1.83773,-2.03118 3.28857,0.29017 6.35857,-5.82248 7.85966,-7.04163 -6.28697,-3.28857 -5.22302,-7.64108 v -14.79856 l -5.80336,-7.35092 v -40.04317 l -5.80336,0.29017 -4.35252,-1.54756 -6.8673,-0.19344 -4.44924,2.12789 -3.09513,2.51479 -7.06075,0.29017 -2.90167,1.25739 -0.67706,3.48202 -2.32135,2.12789 -5.41646,1.16068 H 226.911 l -0.19345,1.16067 -0.29017,6.48041 -22.90953,0.0967 z", SPT: "m 310.18942,561.84655 1e-5,39.84972 5.80336,7.35092 v 14.79856 l 5.22302,7.64108 32.90302,16.69304 1.58957,1.87771 8.04902,-0.4659 v -6.70751 h 8.27263 v -22.8056 h 6.70753 v 7.60186 l 23.25276,0.44716 v -15.42731 l -8.04903,-0.44716 v -7.60187 h 11.40279 v -3.80094 h 4.47168 v 4.02452 h 7.60187 v -44.75364 l -5.37931,-1.85338 -10.63948,-2.41806 -13.92806,-8.99521 -32.40208,-12.28377 -5.1263,-2.41806 -4.44924,-4.83613 -3.48201,-5.80336 -1.25739,-1.54756 -13.251,-2.70824 -2.61151,-0.77378 -2.41807,-5.31974 -8.1247,-6.77058 -4.64268,-3.19185 v 12.86411 h -1.83773 l -2.41807,4.73941 4.35252,7.54436 z", CFT: "m 275.65593,566.41064 2.9052,-1.27552 7.06075,-0.29017 3.09513,-2.51479 4.44924,-2.12789 6.99513,0.23888 4.22469,1.50212 5.80336,-0.29017 -0.38689,-35.30375 -4.35252,-7.54436 2.41807,-4.73941 h 1.83773 v -31.33813 l -2.1279,-3.48201 -2.80496,-4.44924 -4.93285,-1.93446 -3.67546,-3.96562 -0.96723,-1.83773 h -27.27577 l -4.64269,-4.93286 -12.57394,-17.9904 -10.54276,1.35411 -3.96563,4.35252 -21.3757,5.02958 -4.2558,-0.77378 -12.18704,4.44924 -14.79857,-6.19025 -10.99442,-12.96083 0.45495,1.74101 v 42.23772 h 0.47071 l -0.10442,15.10403 29.28803,-0.27688 0.23536,51.4579 1e-5,10.20429 0.58837,1.88282 v 19.34774 l 2.01578,-0.20192 20.89375,-0.0883 0.48362,-7.64108 h 40.33333 l 5.41646,-1.16068 2.32135,-2.12789 0.67353,-3.46389 z" }; var i = {}; for (var s in r) { i = {}; if (this.options.stateSpecificStyles[s]) { e.extend(i, t, this.options.stateSpecificStyles[s]) } else { i = t } this.stateShapes[s] = n.path(r[s]).attr(i); this.topShape = this.stateShapes[s]; this.stateHitAreas[s] = n.path(r[s]).attr({ fill: "#000", "stroke-width": 0, opacity: 0, cursor: "pointer" }); this.stateHitAreas[s].node.dataState = s } this._onClickProxy = e.proxy(this, "_onClick"); this._onMouseOverProxy = e.proxy(this, "_onMouseOver"), this._onMouseOutProxy = e.proxy(this, "_onMouseOut"); for (var s in this.stateHitAreas) { this.stateHitAreas[s].toFront(); e(this.stateHitAreas[s].node).bind("mouseout", this._onMouseOutProxy); e(this.stateHitAreas[s].node).bind("click", this._onClickProxy); e(this.stateHitAreas[s].node).bind("mouseover", this._onMouseOverProxy) } }, _initCreateLabels: function () { var t = this.paper; var n = []; var r = 860; var i = 220; var s = this.options.labelWidth; var o = this.options.labelHeight; var u = this.options.labelGap; var a = this.options.labelRadius; var f = s / this.scale; var l = o / this.scale; var c = (s + u) / this.scale; var h = (o + u) / this.scale * .5; var p = a / this.scale; var d = this.options.labelBackingStyles; var v = this.options.labelTextStyles; var m = {}; for (var g = 0, y, b, w; g < n.length; ++g) { w = n[g]; y = (g + 1) % 2 * c + r; b = g * h + i; m = {}; if (this.options.stateSpecificLabelBackingStyles[w]) { e.extend(m, d, this.options.stateSpecificLabelBackingStyles[w]) } else { m = d } this.labelShapes[w] = t.rect(y, b, f, l, p).attr(m); m = {}; if (this.options.stateSpecificLabelTextStyles[w]) { e.extend(m, v, this.options.stateSpecificLabelTextStyles[w]) } else { e.extend(m, v) } if (m["font-size"]) { m["font-size"] = parseInt(m["font-size"]) / this.scale + "px" } this.labelTexts[w] = t.text(y + f / 2, b + l / 2, w).attr(m); this.labelHitAreas[w] = t.rect(y, b, f, l, p).attr({ fill: "#000", "stroke-width": 0, opacity: 0, cursor: "pointer" }); this.labelHitAreas[w].node.dataState = w } for (var w in this.labelHitAreas) { this.labelHitAreas[w].toFront(); e(this.labelHitAreas[w].node).bind("mouseout", this._onMouseOutProxy); e(this.labelHitAreas[w].node).bind("click", this._onClickProxy); e(this.labelHitAreas[w].node).bind("mouseover", this._onMouseOverProxy) } }, _getStateFromEvent: function (e) { var t = e.target && e.target.dataState || e.dataState; return this._getState(t) }, _getState: function (e) { var t = this.stateShapes[e]; var n = this.stateHitAreas[e]; var r = this.labelShapes[e]; var i = this.labelTexts[e]; var s = this.labelHitAreas[e]; return { shape: t, hitArea: n, name: e, labelBacking: r, labelText: i, labelHitArea: s } }, _onMouseOut: function (e) { var t = this._getStateFromEvent(e); if (!t.hitArea) { return } return !this._triggerEvent("mouseout", e, t) }, _defaultMouseOutAction: function (t) { var n = {}; if (this.options.stateSpecificStyles[t.name]) { e.extend(n, this.options.stateStyles, this.options.stateSpecificStyles[t.name]) } else { n = this.options.stateStyles } t.shape.animate(n, this.options.stateHoverAnimation); if (t.labelBacking) { var n = {}; if (this.options.stateSpecificLabelBackingStyles[t.name]) { e.extend(n, this.options.labelBackingStyles, this.options.stateSpecificLabelBackingStyles[t.name]) } else { n = this.options.labelBackingStyles } t.labelBacking.animate(n, this.options.stateHoverAnimation) } }, _onClick: function (e) { var t = this._getStateFromEvent(e); if (!t.hitArea) { return } return !this._triggerEvent("click", e, t) }, _onMouseOver: function (e) { var t = this._getStateFromEvent(e); if (!t.hitArea) { return } return !this._triggerEvent("mouseover", e, t) }, _defaultMouseOverAction: function (t) { this.bringShapeToFront(t.shape); this.paper.safari(); var n = {}; if (this.options.stateSpecificHoverStyles[t.name]) { e.extend(n, this.options.stateHoverStyles, this.options.stateSpecificHoverStyles[t.name]) } else { n = this.options.stateHoverStyles } t.shape.animate(n, this.options.stateHoverAnimation); if (t.labelBacking) { var n = {}; if (this.options.stateSpecificLabelBackingHoverStyles[t.name]) { e.extend(n, this.options.labelBackingHoverStyles, this.options.stateSpecificLabelBackingHoverStyles[t.name]) } else { n = this.options.labelBackingHoverStyles } t.labelBacking.animate(n, this.options.stateHoverAnimation) } }, _triggerEvent: function (t, n, r) { var i = r.name; var s = false; var o = e.Event("usmap" + t + i); o.originalEvent = n; if (this.options[t + "State"][i]) { s = this.options[t + "State"][i](o, r) === false } if (o.isPropagationStopped()) { this.element.trigger(o, [r]); s = s || o.isDefaultPrevented() } if (!o.isPropagationStopped()) { var u = e.Event("usmap" + t); u.originalEvent = n; if (this.options[t]) { s = this.options[t](u, r) === false || s } if (!u.isPropagationStopped()) { this.element.trigger(u, [r]); s = s || u.isDefaultPrevented() } } if (!s) { switch (t) { case "mouseover": this._defaultMouseOverAction(r); break; case "mouseout": this._defaultMouseOutAction(r); break } } return !s }, trigger: function (e, t, n) { t = t.replace("usmap", ""); e = e.toUpperCase(); var r = this._getState(e); this._triggerEvent(t, n, r) }, bringShapeToFront: function (e) { if (this.topShape) { e.insertAfter(this.topShape) } this.topShape = e } }; var c = []; s(e, "usmap", l, c) })(jQuery, document, window, Raphael)
 
 campaignTrail_temp.questions_json = [
     {
@@ -888,7 +888,7 @@ campaignTrail_temp.answers_json = [
         "pk": 14654,
         "fields": {
             "question": 14651,
-            "description": "A fair stance. The farmers appreciate your pragmatic mind."
+            "description": "The farmers may do what they wish, it is their copper."
         }
     },
     {
@@ -5728,12 +5728,12 @@ function answerFromQuestion(answerPk, questionPk) {
     return campaignTrail_temp.answers_json.filter((x) => x.pk == answerPk)[0].fields.question == questionPk
 }
 
-function tunnelTo(new_q){
+function tunnelTo(new_q) {
     e = campaignTrail_temp;
-    let q = e.questions_json[e.questions_json.map(f=>f.pk).indexOf(new_q)];
+    let q = e.questions_json[e.questions_json.map(f => f.pk).indexOf(new_q)];
     campaignTrail_temp.questions_json[campaignTrail_temp.question_number] = q;
     campaignTrail_temp.question_number--;
-}  
+}
 
 let keepsake = "";
 let job = "";
@@ -5749,54 +5749,54 @@ cyoAdventure = function (question) {
     q = question.pk;
     a = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length - 1];
 
-    if(a == 14664) {
+    if (a == 14664) {
         executed = true;
     }
-    else if(a == 14673 || a == 14674 || a == 14722) {
+    else if (a == 14673 || a == 14674 || a == 14722) {
         wife = true;
     }
-    else if(a == 14705 || a == 14698) {
+    else if (a == 14705 || a == 14698) {
         pregnant = false;
     }
-    else if(a == 14636) {
+    else if (a == 14636) {
         keepsake = "necklace";
     }
-    else if(a == 14637) {
+    else if (a == 14637) {
         keepsake = "shell";
     }
-    else if(a == 14638) {
+    else if (a == 14638) {
         keepsake = "cow"
     }
-    else if(a == 14640) {
+    else if (a == 14640) {
         keepsake = "farmer";
     }
-    else if(a == 14642) {
+    else if (a == 14642) {
         keepsake = "shepard";
     }
-    else if(a == 14641) {
+    else if (a == 14641) {
         keepsake = "spiritual"
     }
 
-    if(a == 14721) {
+    if (a == 14721) {
         unlockAchievement("A Gift");
-    } else if(a == 14681) {
-        unlockAchievement("Good Farmers Give Good Advice");
+    } else if (a == 14681) {
+        unlockAchievement("Green Thumb");
     }
 
-    if(q == 14683) {
+    if (q == 14683) {
         // change theme to winter
         document.body.background =
-        "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/winter.jpeg?raw=true";
+            "https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/winter.jpeg?raw=true";
 
         nct_stuff.themes[nct_stuff.selectedTheme].coloring_title = "#7bbfea";
 
         nct_stuff.themes[nct_stuff.selectedTheme].coloring_window = "#38a2bc";
 
         document.getElementsByClassName("game_header")[0].style.backgroundColor =
-        nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
+            nct_stuff.themes[nct_stuff.selectedTheme].coloring_title;
 
         $("#game_window")[0].style.backgroundColor =
-        nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
+            nct_stuff.themes[nct_stuff.selectedTheme].coloring_window;
 
         $(".container")[0].style.backgroundColor = "#372d1f";
 
@@ -5808,26 +5808,40 @@ cyoAdventure = function (question) {
     }
 
     // tunneling
-    if(q == 14663 && executed) {
+    if (q == 14663 && executed) {
         tunnelTo(14667);
     }
-    else if(q == 14691 && wife) {
+    else if (q == 14691 && wife) {
         tunnelTo(14695);
     }
-    else if(q == 14699 && wife && pregnant) {
+    else if (q == 14699 && wife && pregnant) {
         tunnelTo(14703);
     }
-    else if(q == 14707 && wife && pregnant) {
+    else if (q == 14707 && wife && pregnant) {
         tunnelTo(14711);
     }
 }
 
+function setImage(url) { if (url == '' || url == null) return; let interval = setInterval(function () { img = document.getElementsByClassName("person_image")[0]; if (img != null) { img.src = url; clearInterval(interval); } }, 50); }
+
 endingPicker = (out, totv, aa, quickstats) => {
-  //out = "win", "loss", or "tie" for your candidate
-  //totv = total votes in entire election
-  //aa = all final overall results data
-  //quickstat = relevant data on candidate performance (format: your candidate's electoral vote count, your candidate's popular vote share, your candidate's raw vote total)
-  return "TODO"
+    //out = "win", "loss", or "tie" for your candidate
+    //totv = total votes in entire election
+    //aa = all final overall results data
+    //quickstat = relevant data on candidate performance (format: your candidate's electoral vote count, your candidate's popular vote share, your candidate's raw vote total)
+    console.log(quickstats)
+    let pv = quickstats[2];
+
+    if (pv > 50) {
+        setImage("https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/dawn.png?raw=true");
+        return "Your tribe has made it through the brutal Winter. Those still among the living celebrate your leadership. You are a renowned leader.";
+    }
+    else {
+        setImage("https://github.com/JetSimon/tct-4352BCE/blob/main/rawimages/chaos.png?raw=true")
+        return "Chaos won";
+    }
+
+    return out
 }
 
 
@@ -5837,16 +5851,16 @@ let questionConfig = { attributes: true, childList: true, subtree: true };
 function updateQuestions(mutationList, observer) {
     const answers = document.getElementsByClassName("game_answers");
 
-    for(let i = 0; i < answers.length; i++) {
+    for (let i = 0; i < answers.length; i++) {
         const answer = answers[i];
-        if(answer.classList.contains("done")) {
+        if (answer.classList.contains("done")) {
             continue;
         }
         answer.classList.add("done");
 
         let answerObject = campaignTrail_temp.answers_json.filter((x) => x.pk == answer.value)[0];
 
-        if(answerObject.fields.condition != null) {
+        if (answerObject.fields.condition != null) {
             answer.disabled = !(eval(answerObject.fields.condition));
         }
     }
@@ -5856,7 +5870,7 @@ const questionObserver = new MutationObserver(updateQuestions);
 questionObserver.observe(gameWindowNode, questionConfig);
 
 let music = new Audio('https://github.com/JetSimon/tct-4352BCE/raw/main/rawimages/normal.mp3');
-music.loop = true; 
+music.loop = true;
 music.play();
 
 //#endcode
