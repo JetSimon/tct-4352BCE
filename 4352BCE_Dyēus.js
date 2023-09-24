@@ -5777,6 +5777,13 @@ cyoAdventure = function (question) {
         keepsake = "spiritual"
     }
 
+    if(q == 14683) {
+        music.pause();
+        music = new Audio('https://github.com/JetSimon/tct-4352BCE/raw/main/rawimages/winter.mp3');
+        music.loop = true;
+        music.play();
+    }
+
     // tunneling
     if(q == 14663 && executed) {
         tunnelTo(14667);
@@ -5824,6 +5831,10 @@ function updateQuestions(mutationList, observer) {
 
 const questionObserver = new MutationObserver(updateQuestions);
 questionObserver.observe(gameWindowNode, questionConfig);
+
+let music = new Audio('https://github.com/JetSimon/tct-4352BCE/raw/main/rawimages/normal.mp3');
+music.loop = true; 
+music.play();
 
 //#endcode
 
